@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private _myservice: AdminService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.loginForm = new FormGroup(
       {
-        regno: new FormControl(null, Validators.required),
+        adminRegNumber: new FormControl(null, Validators.required),
         password: new FormControl(null, Validators.required)
       }
     );
