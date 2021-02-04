@@ -1,0 +1,51 @@
+<div class="row"></div>
+
+<div class="row panel">
+
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Login</h5>
+        </div>
+        <div class="card-body" >
+          <form>
+           
+            <div class="row">
+              <div class="col-md-12 pr-1">
+                <div class="form-group" [formGroup]="loginForm">
+                  <label>Registration Number</label>
+                  <input type="text" class="form-control" placeholder="Company" formControlName="regno" value="Registration Number">
+                </div>
+              </div>
+              
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12 pr-1">
+                  <div class="form-group" [formGroup]="loginForm">
+                    <label>Password</label>
+                    <input type="text" class="form-control" placeholder="Company" formControlName="password" value="Password">
+                  </div>
+                </div>
+                
+              </div>
+            
+           
+          
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary btn-round" (click)="adminLogin()">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  
