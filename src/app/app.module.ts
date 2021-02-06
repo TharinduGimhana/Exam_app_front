@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StudentService } from './services/student-service/student.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 
 
 @NgModule({
@@ -49,7 +50,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([{
+    RouterModule.forRoot([
+      {path: '',
+      component: LoginComponent},
+      {
       path: 'AddNewLec',
       component: AddNewLecComponent
     },
@@ -75,7 +79,23 @@ import { ReactiveFormsModule } from '@angular/forms';
   },
   {path: 'ApprovalForm',
   component: ApprovalFormComponent
-  }
+  },
+  {
+    path:'admin',
+    component:AdminLayoutComponent
+  },{
+    path: 'dash',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  }, {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+        {
+      path: '',
+      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+  }]},
+  
 ]),
     RouterModule.forRoot(AppRoutes,{
       useHash: true

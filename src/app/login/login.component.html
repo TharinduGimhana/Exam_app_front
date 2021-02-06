@@ -17,7 +17,7 @@
               <div class="col-md-12 pr-1">
                 <div class="form-group" [formGroup]="loginForm">
                   <label>Registration Number</label>
-                  <input type="text" class="form-control" placeholder="Company" formControlName="adminRegNumber" value="Registration Number">
+                  <input type="text" class="form-control" placeholder="Registration No" formControlName="adminRegNumber" value="Registration Number">
                 </div>
               </div>
               
@@ -28,7 +28,7 @@
                 <div class="col-md-12 pr-1">
                   <div class="form-group" [formGroup]="loginForm">
                     <label>Password</label>
-                    <input type="text" class="form-control" placeholder="Company" formControlName="password" value="Password">
+                    <input type="text" class="form-control" placeholder="Password" formControlName="password" value="Password">
                   </div>
                 </div>
                 
@@ -40,6 +40,7 @@
               <div class="update ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary btn-round" (click)="adminLogin()">Login</button>
               </div>
+              {{successMessage}}
             </div>
           </form>
         </div>

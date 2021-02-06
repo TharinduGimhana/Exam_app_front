@@ -23,12 +23,12 @@ export class AdminService {
 
 
   public adminLogin(data:any):Observable<any>{
-    return this.http.post<any>(`${this.adminUrl}/adminLogin'`,data);
+    return this.http.post<any>(`${this.adminUrl}/adminLogin`,data);
 
   }
 
   public addSubjects(data:any):Observable<any>{
-    return this.http.post<any>(`${this.adminUrl}/addSubjects'`,data);
+    return this.http.post<any>(`${this.adminUrl}/addSubjects`,data);
 
   }
 

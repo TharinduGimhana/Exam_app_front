@@ -5,6 +5,7 @@ import { from } from 'rxjs';
 import {AdminService} from 'app/services/admin-service/admin.service';
 import { Router } from '@angular/router';
 import { RouterModule, Routes, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 
 
 @Component({
@@ -45,8 +46,9 @@ export class LoginComponent implements OnInit {
         .subscribe(
           data => {
             console.log(data);
+            console.log("weda bro");
             localStorage.setItem('token', data.toString());
-            this.router.navigate(['/DashboardComponent']);
+            this.router.navigate(['/dash']);
           },
           error => this.successMessage = 'Invalid Email Or Password'
         );
