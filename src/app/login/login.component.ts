@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
         .subscribe(
           data => {
             console.log(data);
-            console.log("weda bro");
             localStorage.setItem('token', data.toString());
             this.router.navigate(['/dash']);
           },

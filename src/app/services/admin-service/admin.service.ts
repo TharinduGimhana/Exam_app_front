@@ -32,6 +32,11 @@ export class AdminService {
 
   }
 
+  public addStudent(data:any):Observable<any>{
+    return this.http.post<any>(`${this.adminUrl}/addStudent`,data);
+
+  }
+
   public getStudentSubjects():Observable<any>{
     return this.http.get<any>(`${this.adminUrl}/getStudentSubjects`);
   }

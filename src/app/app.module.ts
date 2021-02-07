@@ -27,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { StudentService } from './services/student-service/student.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from "./pages/dashboard/dashboard.component";
+
+
+
 
 
 @NgModule({
