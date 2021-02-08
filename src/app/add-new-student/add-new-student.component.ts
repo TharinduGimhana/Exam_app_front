@@ -11,9 +11,9 @@ import {HttpClient} from '@angular/common/http';
 export class AddNewStudentComponent implements OnInit {
 
   addStudent: FormGroup;
-  successMessage:'';
+  successMessage:"";
 
-  constructor(private _myservice:AdminService, private http: HttpClient) {
+  constructor(private AdminService:AdminService, private http: HttpClient) {
 
 
     this.addStudent = new FormGroup({
@@ -24,7 +24,7 @@ export class AddNewStudentComponent implements OnInit {
       regNo: new FormControl(null, Validators.required),
       indexNo: new FormControl(null, Validators.required),
       contactNo: new FormControl(null, Validators.required),
-      email: new FormControl(null, Validators.required),
+      email: new FormControl(null, Validators.email),
       password: new FormControl(null, Validators.required),
     })
    }
@@ -37,14 +37,22 @@ export class AddNewStudentComponent implements OnInit {
 
     
 
-    console.log(this.addStudent.value);
-    // console.log(rooms);
+    // console.log(this.addStudent.value);
+    console.log("function work");
     if (this.addStudent.valid) {
 
-      this._myservice.signUpStudent(this.addStudent.value)
+      this.AdminService.signUpStudent(this.addStudent.value)
         .subscribe(
-          data => this.successMessage = 'Added success',
-          error => this.successMessage = 'Some error'
+          // data => this.successMessage = 'Added success',
+          // error => this.successMessage = 'Some error'
+          data =>{console.log(data);
+            console.log("service work");
+          },
+          error =>{
+            console.log("error");
+          }
+          
+        
         );
 
 

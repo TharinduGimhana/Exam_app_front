@@ -12,7 +12,7 @@ export class AdminService {
   constructor(  private http: HttpClient) { }
 
   public signUpStudent(data:any):Observable<any>{
-    return this.http.post<any>(`${this.adminUrl}/studentSignup`,data);
+    return this.http.post<any>(`${this.adminUrl}/signUpStudent`,data);
 
   }
 
