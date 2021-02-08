@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'
 import { from } from 'rxjs';
-import {AdminService} from 'app/services/admin-service/admin.service';
+import { AdminService } from 'app/services/admin-service/admin.service';
 import { Router } from '@angular/router';
 import { RouterModule, Routes, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         password: new FormControl(null, Validators.required)
       }
     );
-   }
+  }
 
   ngOnInit() {
   }
@@ -45,8 +45,9 @@ export class LoginComponent implements OnInit {
       this._myservice.adminLogin(this.loginForm.value)
         .subscribe(
           data => {
+            console.log("sdasd")
             console.log(data);
-            localStorage.setItem('token', data.toString());
+            localStorage.setItem('token', data.token);
             this.router.navigate(['/dash']);
           },
           error => this.successMessage = 'Invalid Email Or Password'
