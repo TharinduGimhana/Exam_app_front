@@ -47,8 +47,11 @@ export class LoginComponent implements OnInit {
           data => {
             console.log("sdasd")
             console.log(data);
-            localStorage.setItem('token', data.token);
-            this.router.navigate(['/dash']);
+            if (data.token != undefined) {
+              localStorage.setItem('token', data.token);
+              this.router.navigate(['/dash']);
+            }
+
           },
           error => this.successMessage = 'Invalid Email Or Password'
         );
